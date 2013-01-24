@@ -34,36 +34,22 @@
 
 - (void) parentDidScrollWithFractionalOffset:(float)offset andDirection:(int)direction
 {
-	
-	for (TPTParalaxControl *c in controlsToApplyParalax)
+	for (TPTParalaxControl *paralaxControl in controlsToApplyParalax)
 	{
-		CGRect frame = c.control.frame;
+		CGRect frame = paralaxControl.control.frame;
 		
-		//NSLog(@"origin-x %f, %f", self.frame.origin.x, offset);
 		if (offset < .2)
 		{
-			if (direction == 0)
-			{
-				frame.origin.x = c.padding - (c.offset * offset);
-			} else {
-				frame.origin.x = c.padding + (c.offset * offset);
-			}
-			c.control.frame = frame;
+			frame.origin.x = paralaxControl.padding + ((paralaxControl.offset * offset) * direction);
+			paralaxControl.control.frame = frame;
 		}
 		
 		if (offset > .8)
 		{
-			if (direction == 0)
-			{
-				frame.origin.x = c.padding - (c.offset * (1 - offset));
-			} else {
-				frame.origin.x = c.padding + (c.offset * (1 - offset));
-			}
-			c.control.frame = frame;
+			frame.origin.x = paralaxControl.padding + ((paralaxControl.offset * (1 - offset)) * direction);
+			paralaxControl.control.frame = frame;
 		}
-		
 	}
-	
 }
 
 @end

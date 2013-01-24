@@ -13,8 +13,8 @@
 
 typedef enum
 {
-	kScrollDirectionLeft = 0,
-	kScrollDirectionRight
+	kScrollDirectionLeft = -1,
+	kScrollDirectionRight = 1
 	
 } ScrollDirection;
 
