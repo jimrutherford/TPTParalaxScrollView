@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SamplePageViewController.h"
+#import "SamplePage.h"
 #import "TPTParalaxScrollView.h"
 
 @interface ViewController : UIViewController <UIScrollViewDelegate>
@@ -16,7 +16,8 @@
 
 
 
-@property (strong, nonatomic) SamplePageViewController *page;
-
+@property (strong, nonatomic) SamplePage *page1;
+@property (strong, nonatomic) SamplePage *page2;
+@property (strong, nonatomic) SamplePage *page3;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "TPTParalaxScrollView.h"
 #import "TPTParalaxScrollViewPrivateDelegate.h"
+#import "SamplePage.h"
 
 // maybe expose these as properties
 #define pageWidth 320
@@ -19,10 +20,35 @@
     TPTParalaxScrollViewPrivateDelegate *_myDelegate;
 }
 
+float lastContentOffset;
+
 #pragma mark - UIScrollView Delegate Methods
 - (void) paralaxScrollViewDidScroll
 {
-	NSLog(@"Content Offset %f", [self fractionalOffset]);
+	//NSLog(@"Content Offset %f", [self fractionalOffset]);
+	float fractionalOffset = [self fractionalOffset];
+	
+	ScrollDirection scrollDirection;
+	if (lastContentOffset > self.contentOffset.x)
+		scrollDirection = kScrollDirectionRight;
+	else if (lastContentOffset < self.contentOffset.x)
+		scrollDirection = kScrollDirectionLeft;
+	
+	lastContentOffset = self.contentOffset.x;
+	
+	
+	NSArray *children = [self subviews];
+	
+	for (id child in children)
+	{
+		
+		if ([child isKindOfClass:[SamplePage class]])
+		{
+			SamplePage *page = (SamplePage*)child;
+			[page parentDidScrollWithFractionalOffset:fractionalOffset andDirection:scrollDirection];
+			
+		}
+	}
 }
 
 

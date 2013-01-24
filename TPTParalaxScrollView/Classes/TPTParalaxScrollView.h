@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface TPTParalaxScrollView : UIScrollView <UIScrollViewDelegate>
+
+typedef enum
+{
+	kScrollDirectionLeft = 0,
+	kScrollDirectionRight
+	
+} ScrollDirection;
 
 - (void) paralaxScrollViewDidScroll;
 
