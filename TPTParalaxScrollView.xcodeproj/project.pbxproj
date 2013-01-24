@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		374FB66916B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 374FB66816B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */; };
 		374FB67516B1A533002F25D5 /* amy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 374FB67116B1A533002F25D5 /* amy@2x.png */; };
 		374FB67616B1A533002F25D5 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 374FB67216B1A533002F25D5 /* bg@2x.png */; };
 		374FB67716B1A533002F25D5 /* kate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 374FB67316B1A533002F25D5 /* kate@2x.png */; };
 		374FB67816B1A533002F25D5 /* scarlett@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 374FB67416B1A533002F25D5 /* scarlett@2x.png */; };
 		374FB67B16B1B6BB002F25D5 /* TPTParalaxPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 374FB67A16B1B6BB002F25D5 /* TPTParalaxPage.m */; };
+		374FB67E16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 374FB67D16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */; };
 		37B85EAD16ADB044006BE265 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B85EAC16ADB044006BE265 /* UIKit.framework */; };
 		37B85EAF16ADB044006BE265 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B85EAE16ADB044006BE265 /* Foundation.framework */; };
 		37B85EB116ADB044006BE265 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B85EB016ADB044006BE265 /* CoreGraphics.framework */; };
@@ -29,14 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		374FB66716B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPTParalaxScrollViewPrivateDelegate.h; sourceTree = "<group>"; };
-		374FB66816B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPTParalaxScrollViewPrivateDelegate.m; sourceTree = "<group>"; };
 		374FB67116B1A533002F25D5 /* amy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "amy@2x.png"; path = "images/amy@2x.png"; sourceTree = "<group>"; };
 		374FB67216B1A533002F25D5 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "images/bg@2x.png"; sourceTree = "<group>"; };
 		374FB67316B1A533002F25D5 /* kate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "kate@2x.png"; path = "images/kate@2x.png"; sourceTree = "<group>"; };
 		374FB67416B1A533002F25D5 /* scarlett@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "scarlett@2x.png"; path = "images/scarlett@2x.png"; sourceTree = "<group>"; };
 		374FB67916B1B6BB002F25D5 /* TPTParalaxPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPTParalaxPage.h; path = Classes/TPTParalaxPage.h; sourceTree = "<group>"; };
 		374FB67A16B1B6BB002F25D5 /* TPTParalaxPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPTParalaxPage.m; path = Classes/TPTParalaxPage.m; sourceTree = "<group>"; };
+		374FB67C16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPTParalaxScrollViewPrivateDelegate.h; path = Classes/TPTParalaxScrollViewPrivateDelegate.h; sourceTree = "<group>"; };
+		374FB67D16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPTParalaxScrollViewPrivateDelegate.m; path = Classes/TPTParalaxScrollViewPrivateDelegate.m; sourceTree = "<group>"; };
 		37B85EA816ADB044006BE265 /* TPTParalaxScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPTParalaxScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B85EAC16ADB044006BE265 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37B85EAE16ADB044006BE265 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,10 +152,10 @@
 		37B85ECF16ADB09E006BE265 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				374FB67C16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.h */,
+				374FB67D16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */,
 				37B85ED016ADB191006BE265 /* TPTParalaxScrollView.h */,
 				37B85ED116ADB191006BE265 /* TPTParalaxScrollView.m */,
-				374FB66716B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.h */,
-				374FB66816B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m */,
 				374FB67916B1B6BB002F25D5 /* TPTParalaxPage.h */,
 				374FB67A16B1B6BB002F25D5 /* TPTParalaxPage.m */,
 			);
@@ -246,8 +246,8 @@
 				37B85EC616ADB045006BE265 /* ViewController.m in Sources */,
 				37B85ED216ADB191006BE265 /* TPTParalaxScrollView.m in Sources */,
 				37B85ED716ADB1BE006BE265 /* SamplePage.m in Sources */,
-				374FB66916B047B3002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m in Sources */,
 				374FB67B16B1B6BB002F25D5 /* TPTParalaxPage.m in Sources */,
+				374FB67E16B1B912002F25D5 /* TPTParalaxScrollViewPrivateDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,16 @@
 
 #import "TPTParalaxPage.h"
 
+
+
+@implementation TPTParalaxControl
+
+@synthesize control;
+@synthesize offset;
+@synthesize padding;
+
+@end
+
 @implementation TPTParalaxPage
 
 @synthesize controlsToApplyParalax;
@@ -16,7 +26,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        controlsToApplyParalax = [NSMutableArray array];
     }
     return self;
 }
@@ -25,39 +35,36 @@
 - (void) parentDidScrollWithFractionalOffset:(float)offset andDirection:(int)direction
 {
 	
-	CGRect topImageFrame = topImage.frame;
-	CGRect titleLabelFrame = titleLabel.frame;
-	
-	//NSLog(@"origin-x %f, %f", self.frame.origin.x, offset);
-	if (offset < .2)
+	for (TPTParalaxControl *c in controlsToApplyParalax)
 	{
-		if (direction == 0)
+		CGRect frame = c.control.frame;
+		
+		//NSLog(@"origin-x %f, %f", self.frame.origin.x, offset);
+		if (offset < .2)
 		{
-			topImageFrame.origin.x = 0 - (layerOneOffset * offset);
-			titleLabelFrame.origin.x = 20 - (layerTwoOffset * offset);
-		} else {
-			topImageFrame.origin.x = 0 + (layerOneOffset * offset);
-			titleLabelFrame.origin.x = 20 + (layerTwoOffset * offset);
+			if (direction == 0)
+			{
+				frame.origin.x = c.padding - (c.offset * offset);
+			} else {
+				frame.origin.x = c.padding + (c.offset * offset);
+			}
+			c.control.frame = frame;
 		}
-		topImage.frame = topImageFrame;
-		titleLabel.frame = titleLabelFrame;
+		
+		if (offset > .8)
+		{
+			if (direction == 0)
+			{
+				frame.origin.x = c.padding - (c.offset * (1 - offset));
+			} else {
+				frame.origin.x = c.padding + (c.offset * (1 - offset));
+			}
+			c.control.frame = frame;
+		}
+		
 	}
 	
-	if (offset > .8)
-	{
-		if (direction == 0)
-		{
-			topImageFrame.origin.x = 0 - (layerOneOffset * (1 - offset));
-			titleLabelFrame.origin.x = 20 - (layerTwoOffset * (1 - offset));
-		} else {
-			topImageFrame.origin.x = 0 + (layerOneOffset * (1 - offset));
-			titleLabelFrame.origin.x = 20 + (layerTwoOffset * (1 - offset));
-		}
-		topImage.frame = topImageFrame;
-		titleLabel.frame = titleLabelFrame;
-	}
 }
 
-
-
 @end
+

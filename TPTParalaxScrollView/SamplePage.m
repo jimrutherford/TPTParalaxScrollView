@@ -7,6 +7,7 @@
 //
 
 #import "SamplePage.h"
+#import "TPTParalaxPage.h"
 
 #define layerOneOffset	200
 #define layerTwoOffset	100
@@ -57,6 +58,17 @@
 	descriptionLabel.backgroundColor = [UIColor clearColor];
 	[self addSubview:descriptionLabel];
 	
+	TPTParalaxControl *paralaxControl = [[TPTParalaxControl alloc] init];
+	paralaxControl.control = topImage;
+	paralaxControl.offset = 100;
+	paralaxControl.padding = 0;
+	[self.controlsToApplyParalax addObject:paralaxControl];
+	
+	paralaxControl = [[TPTParalaxControl alloc] init];
+	paralaxControl.control = titleLabel;
+	paralaxControl.offset = 200;
+	paralaxControl.padding = 20;
+	[self.controlsToApplyParalax addObject:paralaxControl];
 	
     return self;
 }
